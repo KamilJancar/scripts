@@ -1,0 +1,43 @@
+
+.parallax {
+	background-image: url('bike.jpg');
+	height: 600px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.box {
+	background-image: url('man_on_bike.jpg');
+	height: 800px;
+}
+
+
+
+p{
+	font-family: Helvetica;
+}
+
+ul {
+	top:10px;
+	width: 100%;
+	position: fixed;
+	list-style-type: none;
+	background-color: white;
+	margin: 0;
+	padding: 0;
+}
+
+li{
+	float: left;	
+}
+
+li a{
+	display:block;
+	color:black;
+	text-align: center;
+	text-decoration: none;
+	padding: 14px 16px;
+}
+
