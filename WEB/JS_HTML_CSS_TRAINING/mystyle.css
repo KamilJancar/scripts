@@ -1,11 +1,37 @@
 
+@font-face {
+font-family: cream;
+src: url(fonts/ca42b7ce0d708ee0817789585c449739);
+font-size: 76px;
+
+}
+
+.gling{
+	font-family: :cream;
+	color:#294057;;
+}
 .parallax {
+	top:50px;
 	background-image: url('bike.jpg');
 	height: 600px;
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+.MainBar {
+	width: 100%;
+	background-color: white;
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.myCart{
+	background-color: rgba(41, 64, 87, 1);
 }
 
 .box {
@@ -22,7 +48,9 @@ p{
 ul {
 	top:10px;
 	width: 100%;
+	height:50px;
 	position: fixed;
+	overflow: hidden;
 	list-style-type: none;
 	background-color: white;
 	margin: 0;
@@ -33,11 +61,8 @@ li{
 	float: left;	
 }
 
-li a{
-	display:block;
-	color:black;
-	text-align: center;
+a{
+	text-transform: uppercase;
 	text-decoration: none;
-	padding: 14px 16px;
 }
 
