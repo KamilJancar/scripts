@@ -1,0 +1,33 @@
+.row{
+	width: 960px;
+	display: flex;
+}
+
+.col-3{
+	margin-left: 60px;
+	width: 220px;
+}
+
+.col-9{
+	width: 700px;
+}
+
+h1{
+	
+	}
+h2{
+	font-weight: 900;
+	color: rgb(66, 176, 244);
+	font-size: 15px;
+	text-transform: uppercase;
+}
+
+h1{
+	font-size: 25px;
+}
+
+.col-9-h2{
+	font-size: 20px;
+	color: black;
+}
+
