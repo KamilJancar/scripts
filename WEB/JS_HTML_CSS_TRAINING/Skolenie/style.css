@@ -1,33 +1,31 @@
-.row{
-	width: 960px;
-	display: flex;
+.row {
+    width: 960px;
+    display: block;
 }
 
-.col-3{
-	margin-left: 60px;
-	width: 220px;
+.col-3 {
+    margin-left: 60px;
+    width: 220px;
 }
 
-.col-9{
-	width: 700px;
+.col-9 {
+    width: 700px;
 }
 
-h1{
-	
-	}
-h2{
-	font-weight: 900;
-	color: rgb(66, 176, 244);
-	font-size: 15px;
-	text-transform: uppercase;
+h1 {}
+
+h2 {
+    font-weight: 900;
+    color: rgb(66, 176, 244);
+    font-size: 15px;
+    text-transform: uppercase;
 }
 
-h1{
-	font-size: 25px;
+h1 {
+    font-size: 25px;
 }
 
-.col-9-h2{
-	font-size: 20px;
-	color: black;
+.col-9-h2 {
+    font-size: 20px;
+    color: black;
 }
-
