@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,10 +9,9 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/my_theme.css" rel="stylesheet">
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -30,51 +29,60 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Zivotopis <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Osobní údaje</a></li>
+            <li><a href="#osobni_udaje">Osobní údaje</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Pracovní skúšenosti</a></li>
+            <li><a href="#pracovni_skusenosti">Pracovní skúšenosti</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Vzdělaní</a></li>
+            <li><a href="#vzdelani">Vzdělaní</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Osobní dovednosti</a></li>
+            <li><a href="#dovednosti">Osobní dovednosti</a></li>
 
 
           </ul>
         </li>
       </ul>
     <div class="row">
-  <div class="col-md-3"><h2></h1></div>
-  <div class="col-md-9"><h1></h1></div>
+  <div class="col-md-3"></div>
+  <div class="col-md-9"></div>
 </div>
 
 <div class="row">
-  <div class="col-md-3">
-    <h2>OSOBNÍ ÚDAJE</h2>
+  <div id="osobni_udaje" class="col-md-3">
+    <h3 class="text-primary">OSOBNÍ ÚDAJE</h3>
   </div>
-
+    <div class="col-md-5">
+      <h2 class="col-md-5-h2">Křenková Michaela </h2>
+      <p>
+      <span class="glyphicon glyphicon-map-marker"></span>
+      Komenského 812, 739 61 Třinec (Česká republika)<br>
+      <span class="glyphicon glyphicon-phone"></span>  
+      +420 723 851 214<br>
+      <span class="glyphicon glyphicon-envelope"></span>
+      krenkovamisa@gmail.com<br>
+      www.misakrenkova.eu<br>
+      Skype michaela_lvicek | ICQ 231-446-350<br>
+      Pohlaví Žena | Datum narození 08. října 1995<br>
+      Státní příslušnost/i Česká republika<br>
+      </p>
+    </div>
+  <div class="col-md-4">
+    <img src="foto.png" class="img-thumbnail" alt="woman_foto" width="304" height="236">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <h3 class="text-primary">ZAMĚSTNÁNÍ, O KTERÉ SE UCHÁZÍM</h3>
+  </div>
   <div class="col-md-9">
-    <h2 class="col-md-9-h2">Křenková Michaela </h2>
-    <p>Komenského 812, 739 61 Třinec (Česká republika)<br>
-    +420 723 851 214<br>
-    krenkovamisa@gmail.com<br>
-    www.misakrenkova.eu<br>
-    Skype michaela_lvicek | ICQ 231-446-350<br>
-    Pohlaví Žena | Datum narození 08. října 1995 | Státní příslušnost/i Česká republika<br>
-    </p>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-3">
-    <h2>ZAMĚSTNÁNÍ, O KTERÉ SE UCHÁZÍM</h2>
+    <h3>Kadeřnice</h3>
   </div>
 </div>
 
 
 <div class="row">
-  <div class="col-md-3">
-    <h2>PRACOVNÍ ZKUŠENOSTI</h2>
+  <div id="pracovni_skusenosti" class="col-md-3">
+    <h3 class="text-primary">PRACOVNÍ ZKUŠENOSTI</h3>
   </div>
-
   <div class="col-md-9">
     <hr>
   </div>
@@ -87,7 +95,6 @@
   </div>
 
   <div class="col-md-9">
-    <h3>Kadeřnice</h3>
     <p>
     Salon Oskar<br>
     Dvořákova 13, 602 00 Brno (Česká republika)<br>
@@ -105,8 +112,8 @@
 
 
 <div class="row">
-  <div class="col-md-3">
-    <h2>VZDĚLÁNÍ, ODBORNÁ PŘÍPRAVA A KURZY</h2>
+  <div id="vzdelani" class="col-md-3">
+    <h3 class="text-primary">VZDĚLÁNÍ, ODBORNÁ PŘÍPRAVA A KURZY</h3>
   </div>
   <div class="col-md-9">
     <hr>
@@ -152,8 +159,8 @@
 </div>
 
 <div class="row">
-  <div class="col-md-3">
-    <h2>OSOBNÍ DOVEDNOSTI</h2>
+  <div id="dovednosti" class="col-md-3">
+    <h3 class="text-primary">OSOBNÍ DOVEDNOSTI</h3>
   </div>
   <div class="col-md-9">
     <hr>
@@ -181,16 +188,16 @@
   <div class="col-md-9">
   <table class="table">
     <tr>
-      <th colspan="2" ="2">POROZUMĚNÍ</th>
-      <th colspan="2">MLUVENÍ </th>
-      <th colspan="2">PÍSEMNÝ PROJEV</th>
+      <th colspan="2">POROZUMĚNÍ</th>
+      <th colspan="2">MLUVENÍ</th>
+      <th>PÍSEMNÝ PROJEV</th>
     </tr>
     <tr>
       <th>Poslech</th>
-      <th>Čtení </th>
+      <th>Čtení</th>
       <th>Ústní interakce</th>
       <th>Samostatný ústní<br>projev</th>
-      <th> </th>
+      <th></th>
     </tr>
     <tr>
       <th>B1</th>
@@ -212,6 +219,7 @@
   </div>
 </div>
 </div>
+<a href="#" class="btn btn-primary" role="button">Back</a>
 </nav>
   </body>
 </html>
