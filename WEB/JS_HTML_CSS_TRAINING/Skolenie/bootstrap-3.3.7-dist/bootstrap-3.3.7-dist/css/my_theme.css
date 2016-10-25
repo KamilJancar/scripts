@@ -16,3 +16,8 @@ h4 {
 .pad_left {
     padding-left: 50px;
 }
+
+li.selected {
+    text-decoration
+: line-through;
+}
