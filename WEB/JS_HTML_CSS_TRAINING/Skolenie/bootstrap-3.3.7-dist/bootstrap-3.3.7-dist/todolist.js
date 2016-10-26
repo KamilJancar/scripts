@@ -1,6 +1,6 @@
-localStorage.setItem('uloha1',"povysavat");
-localStorage.setItem('uloha2',"umyt riad");
-localStorage.setItem('uloha3',"naucit sa JS");
+// localStorage.setItem(0,"povysavat");
+// localStorage.setItem(1,"umyt riad");
+// localStorage.setItem(2,"naucit sa JS");
 
 function populate() {
     var ul = $('#todolist');
@@ -21,9 +21,11 @@ function addTask() {
 
     var newTask = $('#inputField').val().trim();
     if (newTask.length > 0) {
+        $('#btn-add').removeAttr(disabled);
         var ul = $('#todolist');
         ul.append($('<li>').append(newTask));
-        localStorage.setItem(newTask,newTask);
+        index = localStorage.length;
+        localStorage.setItem(index,newTask);
     }
 
 }
@@ -33,27 +35,29 @@ function addTask() {
 
 function lineTrough() {
 
-    $('#todolist li').on('click', function() {
+    $('#todolist').on('click', 'li', function() {
         var item = $(this);
         if (item.css('text-decoration') == "line-through") {
-
-        item.removeClass('selected');
+            item.removeClass('selected');
     } else {
-        item.addClass('selected');
+            item.addClass('selected');
     }
     });
         //Da sa na to pouzit aj toogleClass a potom to dam bez podmienky
     
 }
 
-// function deleteDone() {
-//     var todoList = $('#todolist');
-//     for (var item = 0; item < todoList.children().length; i++) {
-//         if
-//     }
+function deleteDone() {
+    $('#btn-delete').click(function(){
+        $('#todolist').children('li').each(function (){
+            if($(this).css('text-decoration') == "line-through"){
+                localStorage.removeItem(localStorage.key($(this).text()));
+                $(this).remove();
 
-// }
-
+            }
+        });
+        });
+}
 
 $(document).ready(function() {
     populate();
@@ -62,8 +66,7 @@ $(document).ready(function() {
     $('#btn-add').on('click', function() {
         addTask();
     });
-
-
+    deleteDone();
     lineTrough();
     //Funkcia pre kliku na element listu preciarkne ulohu
 });
