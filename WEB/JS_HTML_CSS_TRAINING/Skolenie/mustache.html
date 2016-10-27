@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mustache exp</title>
+</head>
+
+<body>
+    <h1>Mustache experiment</h1>
+    <main id="hlavnaCast">
+    </main>
+    <script id="mustSabl" type="text/template">
+        <p>{{#ziaci}} <b>{{meno}} {{priezvisko}}</b>
+            <br> Znamky:
+            <ul>
+                {{^hodnotenie}}
+                <li>nema</li>{{/hodnotenie}} {{#hodnotenie}}
+                <li>{{predmet}}:{{znamka}}</li>
+                {{/hodnotenie}}
+            </ul>
+            {{/ziaci}}
+        </p>
+    </script>
+    <!-- Vlozenie jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Vlozenie Mustache -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+    <!-- Skript pre tuto stranku  -->
+    <script>
+    var ziaci = JSON.parse('{"ziaci":[{"meno":"Jozko","priezvisko":"Mrkva","hodnotenie":[{"predmet":"matematika","znamka":1},{"predmet":"slovenčina","znamka":3},{"predmet":"angličtina","znamka":2}]}, {"meno":"Ferko","priezvisko":"Kapusta","hodnotenie":[{"predmet":"matematika","znamka":4},{"predmet":"slovenčina","znamka":1},{"predmet":"angličtina","znamka":2}]}, {"meno":"Janka","priezvisko":"Hrušková","hodnotenie":[{"predmet":"matematika","znamka":1},{"predmet":"slovenčina","znamka":1},{"predmet":"angličtina","znamka":1}]}, {"meno":"Pavol","priezvisko":"Paprika"},{"meno":"Petra","priezvisko":"Višňová","hodnotenie":[{"predmet":"matematika","znamka":3},{"predmet":"slovenčina","znamka":1},{"predmet":"angličtina","znamka":1}]}]}');
+
+    console.log(ziaci.ziaci.length);
+    for (var i = 0; i < ziaci.ziaci.length; i++) {
+        console.log(ziaci.ziaci[i].hodnotenie);
+        if (ziaci.ziaci[i].hodnotenie !== undefined) {
+
+            ziaci.ziaci[i].hodnotenie.sort(function(a, b) {
+                return a.znamka - b.znamka
+            });
+        }
+    }
+
+
+
+    $("#hlavnaCast").append(Mustache.render($('#mustSabl').html(), ziaci));
+    </script>
+</body>
+
+</html>
