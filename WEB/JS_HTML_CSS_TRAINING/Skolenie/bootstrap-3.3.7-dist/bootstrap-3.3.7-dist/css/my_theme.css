@@ -18,6 +18,5 @@ h4 {
 }
 
 li.selected {
-    text-decoration
-: line-through;
+    text-decoration: line-through;
 }

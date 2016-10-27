@@ -1,9 +1,7 @@
-var todoList = ["povysavat", "umyt riad", "naucit sa JS", "pozriet serial", "poskladat pradlo"];
-
-function populate(input) {
-    var ul = $('#todolist')
-    for (var i = 0; i < input.length; i++) {
-        ul.append($('<li>').append(input[i]));
+function populate() {
+    var ul = $('#todolist');
+    for (var i = 0; i < localStorage.length; i++) {
+        ul.append($('<li>').append(localStorage.getItem(localStorage.key(i))));
 
     }
 
@@ -12,16 +10,18 @@ function populate(input) {
 
 //TOJE tO ISTE ALE CEZ js
 // window.onload() = function(){
-// 	populate()
-// 	};
+//populate()
+//};
 
 function addTask() {
 
     var newTask = $('#inputField').val().trim();
     if (newTask.length > 0) {
+        $('#btn-add').removeAttr(disabled);
         var ul = $('#todolist');
         ul.append($('<li>').append(newTask));
-        todoList.push(newTask);
+        index = localStorage.length;
+        localStorage.setItem(index, newTask);
     }
 
 }
@@ -29,38 +29,40 @@ function addTask() {
 
 
 
-function lineTrough(item) {
+function lineTrough() {
 
-    console.log(item.css('text-decoration'))
-        //Da sa na to pouzit aj toogleClass a potom to dam bez podmienky
-    if (item.css('text-decoration') == "line-through") {
+    $('#todolist').on('click', 'li', function() {
+        var item = $(this);
+        if (item.css('text-decoration') == "line-through") {
+            item.removeClass('selected');
+        } else {
+            item.addClass('selected');
+        }
+    });
+    //Da sa na to pouzit aj toogleClass a potom to dam bez podmienky
 
-        item.removeClass('selected');
-    } else {
-        item.addClass('selected');
-    }
 }
 
-// function deleteDone() {
-//     var todoList = $('#todolist');
-//     for (var item = 0; item < todoList.children().length; i++) {
-//         if
-//     }
+function deleteDone() {
+    $('#btn-delete').click(function() {
+        $('#todolist').children('li').each(function() {
+            if ($(this).css('text-decoration') == "line-through") {
+                localStorage.removeItem(localStorage.key($(this).text()));
+                $(this).remove();
 
-// }
-
+            }
+        });
+    });
+}
 
 $(document).ready(function() {
-    populate(todoList);
+    populate();
+
 
     $('#btn-add').on('click', function() {
         addTask();
     });
-
-    $('#todolist li').on('click', function() {
-        var item = $(this);
-        lineTrough(item)
-    });
-
+    deleteDone();
+    lineTrough();
     //Funkcia pre kliku na element listu preciarkne ulohu
 });
