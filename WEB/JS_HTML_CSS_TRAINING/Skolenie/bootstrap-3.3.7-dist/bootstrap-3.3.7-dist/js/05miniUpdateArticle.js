@@ -61,8 +61,6 @@ function skontrolujAOdosli() {
 
     function komentar(id) {
 
-        //data.author = $('#author2').val();
-
         $.ajax({
             type: "POST",
             url: "http://wt.kpi.fei.tuke.sk/api/article/" + id + "/comment",

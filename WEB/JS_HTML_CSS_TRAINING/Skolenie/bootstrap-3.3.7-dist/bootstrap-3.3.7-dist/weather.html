@@ -27,50 +27,54 @@
     </main>
     <script id="mustSabl" type="text/template">
         {{#city}}
-        <h1>Predpoveď počasia: {{name}}</h1>
-        <div class="col-md-6">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Dátum</th>
-                        <th>Teplota</th>
-                        <th>Vlhkost</th>
-                        <th>Tlak</th>
-                        <th>Oblacnost</th>
-                        <th>Rýchlosť vetra</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#list}}
-                    <tr>
-                        <td>{{dt_txt}}</td>
-                        <td>{{main.temp}}</td>
-                        <td>{{main.humidity}}</td>
-                        <td>{{main.pressure}}</td>
-                        <td>{{weather.0.main}} <img src="http://openweathermap.org/img/w/{{weather.0.icon}}.png" alt=""></td>
-                        <td>{{wind.speed}}</td>
-                    </tr>
-                    {{/list}}
-                </tbody>
-            </table>
+        <div class="row">
+            <div class="col-md- col-md-offset-2">
+                <h1>Predpoveď počasia: {{name}}</h1>
         </div>
+        <div class="row">
+            
+            <div class="col-md-4 col-md-offset-2">
+                <table class="table">
+                    <thead>
+                        <tr>
+                             <th>Dátum</th>
+                             <th>Teplota</th>
+                             <th>Oblacnost</th>
+                             <th>Detaily</th>
+                             <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#list}}
+                        <tr>
+                            <td>{{dt_txt}}</td>
+                            <td>{{main.temp}}</td>
+                            <td>{{weather.0.main}} <img src="http://openweathermap.org/img/w/{{weather.0.icon}}.png" alt="ikonka pocasia"></td>
+                            <td>
+                                    Vlhkost: {{main.humidity}}<br>
+                                    Tlak: {{main.pressure}}<br>
+                                    Rýchlosť vetra: {{wind.speed}}
+                            </td>
+                        </tr>
+                        {{/list}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         {{/city}}
-        <!-- <br> Oblacnost: {{weather.0.main}}
-<br> Tlak:{{main.pressure}}
- -->
-        <!--             <ul>
-                {{^hodnotenie}}
-                <li>nema</li>{{/hodnotenie}} {{#hodnotenie}}
-                <li>{{predmet}}:{{znamka}}</li>
-                {{/hodnotenie}}
-            </ul> -->
+
+
+        <div id="item">Item</div>
     </script>
     <!-- Vlozenie jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Vlozenie Mustache -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+    <script src="js/weather.js" tpe="text/javascript"></script>
     <!-- Skript pre tuto stranku  -->
     <script>
+
     function spracuj(udaje) {
         $("#pocasie").html(Mustache.render($("#mustSabl").html(), udaje));
     }
