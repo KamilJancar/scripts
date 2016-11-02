@@ -20,3 +20,11 @@ h4 {
 li.selected {
     text-decoration: line-through;
 }
+
+.hideen {
+    display: none;
+}
+
+li {
+    list-style: none;
+}

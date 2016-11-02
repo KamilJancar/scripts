@@ -1,7 +1,9 @@
-$(document).ready(function() {
-	$("#papa" ).click(function() {
-		$("#zmiz").toggle();
-});
+function detaily(argument) {
+    $(".btn").click(function() {
+        $(this).next().toggleClass('hidden');
+    });
+    // body...
+}
 
-    //Funkcia pre kliku na element listu preciarkne ulohu
-});
+
+//Funkcia pre kliku na element listu preciarkne ulohu
